@@ -9,6 +9,7 @@
 - Form validation with Formik & Yup
 - Toast notifications on success
 - Real-time product list updates
+- Pagination given by index values
 
 ---
 
@@ -19,16 +20,29 @@
 - **HTTP Requests:** Axios
 
 ---
+
 ## Installation
 
 1. Clone the repository:
 
 ```bash
-git clone <your-repo-url>
-cd <your-repo-folder>
+git clone https://github.com/Kondalu177/gamyamtask.git
+cd gamyamtask
 npm install
-npm start
+
 ```
 
 ## Start the backend
 
+```bash
+npm run json-server
+```
+
+Endpoints:
+http://localhost:5000/products
+
+- Open New terminal run frontend [app started]
+
+```bash
+npm start
+```
