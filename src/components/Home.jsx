@@ -87,6 +87,7 @@ function Home() {
   useEffect(() => {
     const handler = setTimeout(() => {
       setDebouncedTerm(searchTerm);
+      setPage(1);
     }, 500);
 
     return () => {
@@ -106,12 +107,15 @@ function Home() {
     return nameMatch;
   });
 
+  const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
+  const currentPage = Math.min(page, totalPages) || 1;
   // Calculate visible products for the current page
-  const startIndex = (page - 1) * itemsPerPage;
+  const startIndex = (currentPage - 1) * itemsPerPage;
   const paginatedProducts = filteredProducts.slice(
     startIndex,
     startIndex + itemsPerPage
   );
+
   return (
     <>
       <ToastContainer position="top-right" autoClose={3000} />
@@ -263,7 +267,7 @@ function Home() {
       {/* Pagination */}
       <Box display="flex" justifyContent="center" mt={4} mb={4}>
         <Pagination
-          count={Math.ceil(products.length / itemsPerPage)} // total pages
+          count={totalPages} // total pages
           page={page}
           onChange={(event, value) => setPage(value)}
           color="primary"
