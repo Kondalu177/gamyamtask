@@ -40,8 +40,8 @@ npm run json-server
 
 Endpoints:
 http://localhost:5000/products
-
-- Open New terminal run frontend [app started]
+## Start the Frontend
+- Open New terminal
 
 ```bash
 npm start
